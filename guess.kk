@@ -10,11 +10,11 @@ fun read-int() : <io,exn> int {
   parse-int(input).unjust
 }
 
-fun game(answer) {
+fun game(answer) : <io,exn> int {
   var count := 0
 
-  fun play() {
-    println("Guess a number: ")
+  fun play() : <local<_heap>,io,exn> int {
+    println("Guess a number:")
     val guess = read-int()
 
     count := count + 1
@@ -28,16 +28,18 @@ fun game(answer) {
         println("Too high")
         play()
       }
-      Eq -> println("Correct")
+      Eq -> {
+        println("Correct")
+        count
+      }
     }
   }
 
   play()
-
-  count
 }
 
 fun main() {
   val answer = random(100)
-  game(answer).println
+  val guesses = game(answer)
+  println("It took " ++ guesses.show ++ " tries.")
 }

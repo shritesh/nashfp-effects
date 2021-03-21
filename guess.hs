@@ -2,23 +2,26 @@
 import Control.Monad.State
 import System.Random
 
-game :: Int -> StateT Int IO ()
+game :: Int -> IO Int
 game answer =
-  do
-    lift $ putStr "Guess a number: "
-    input <- lift getLine
-    let guess = read input
-    modify (+ 1)
-    case compare guess answer of
-      LT -> do
-        lift $ putStrLn "Too low"
-        game answer
-      GT -> do
-        lift $ putStrLn "Too high"
-        game answer
-      EQ -> lift $ putStrLn "Correct"
+  execStateT play 0
+  where
+    play :: StateT Int IO ()
+    play = do
+      lift $ putStrLn "Guess a number:"
+      input <- lift getLine
+      let guess = read input
+      modify (+ 1)
+      case compare guess answer of
+        LT -> do
+          lift $ putStrLn "Too low"
+          play
+        GT -> do
+          lift $ putStrLn "Too high"
+          play
+        EQ -> lift $ putStrLn "Correct"
 
 main = do
-  answer <- getStdRandom (randomR (1, 100))
-  guesses <- execStateT (game answer) 0
+  answer <- randomRIO (1, 100)
+  guesses <- game answer
   putStrLn $ "It took " ++ show guesses ++ " tries."

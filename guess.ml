@@ -1,8 +1,8 @@
 let game (answer : int) : int =
   let count = ref 0 in 
 
-  let rec play () =
-    print_string "Guess a number: ";
+  let rec play () : int =
+    print_endline "Guess a number:";
     let guess = read_int () in
     count := !count + 1;
     match compare guess answer with
