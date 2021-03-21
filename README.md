@@ -4,7 +4,7 @@
 
 An example with random numbers, mutable state and console IO
 
-### Direct Style
+### Direct Style (OCaml)
 ```ocaml
 let game (answer : int) : int =
   let count = ref 0 in 
@@ -32,7 +32,7 @@ let main =
   print_endline ("It look " ^ (string_of_int guesses) ^ " tries.")
 ```
 
-### Monadic Style
+### Monadic Style (Haskell)
 ```haskell 
 -- Based on https://wiki.haskell.org/Simple_StateT_use
 import Control.Monad.State
