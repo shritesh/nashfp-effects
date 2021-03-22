@@ -11,9 +11,9 @@ Then we'll [handle that effect](log_console.kk) [with the console](log_with_cons
 
 Loops [may diverge](while.kk).
 
-Effects let you create your own control-flow structures like [exceptions](exceptions.kk).
-
 Effects really are just [resumable exceptions](resumable.kk).
+
+Effects let you create your own control-flow structures like [exceptions](exceptions.kk).
 
 You can do cool things if you [resume twice](twice.kk).
 
