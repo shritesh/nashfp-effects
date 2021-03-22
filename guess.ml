@@ -17,7 +17,7 @@ let game (answer : int) : int =
       !count
   in play ()
         
-let main = 
+let main : unit = 
   Random.self_init ();
   let answer = Random.int 100 in
   let guesses = game answer in

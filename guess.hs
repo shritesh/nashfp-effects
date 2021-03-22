@@ -21,6 +21,7 @@ game answer =
           play
         EQ -> lift $ putStrLn "Correct"
 
+main :: IO ()
 main = do
   answer <- randomRIO (1, 100)
   guesses <- game answer

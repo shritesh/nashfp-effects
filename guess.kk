@@ -38,7 +38,7 @@ fun game(answer) : <io,exn> int {
   play()
 }
 
-fun main() {
+fun main() : <io,exn,random> () {
   val answer = random(100)
   val guesses = game(answer)
   println("It took " ++ guesses.show ++ " tries.")
