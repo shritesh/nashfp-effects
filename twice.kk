@@ -11,9 +11,9 @@ fun xor() : <ask,console> () {
 fun once() {
   var current := False
 
-  with fun ask() {
+  with control ask() {
     current := !current
-    current
+    resume(current)
   }
   xor()
 }
