@@ -1,14 +1,16 @@
 # NashFP - Effects
 
-## Side Effects
-
-Examples with random numbers, local mutable state and console IO
+An example with random numbers, local mutable state and console IO.
 - [Direct Style (Ocaml)](guess.ml)
 - [Monadic Style (Haskell)](guess.hs)
-- [Algebraic Effects (Koka)](guess.kk)
+- [Effects (Koka)](guess.kk)
 
-## Algebraic Effect
+We'll [define our own effect](log.kk).
 
-## Effect Handlers
+Then we'll [handle that effect](log_console.kk) [with the console](log_with_console.kk) or [collect it](log_collect.kk).
 
-## Effect Systems
+Loops are [may diverge](while.kk). 
+
+Effects let you create your own control-flow structures like [exceptions](exceptions.kk).
+
+> By separating effect signatures from their implementation, algebraic effects provide a high degree of modularity, allowing programmers to express effectful programs independently of the concrete interpretation of their effects. - [Handlers in Action (Sam Lindley, Ohad Kammar, Nicolar Oury)](https://homepages.inf.ed.ac.uk/slindley/papers/handlers.pdf) 
