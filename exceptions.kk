@@ -27,3 +27,18 @@ fun raise-maybe() : total maybe<int> {
   }
   Just(compute())
 }
+
+fun try-catch(action : () -> <raise|e> a, rescue : () -> e a) : e a {
+  with control raise(_msg) {
+    rescue()
+  }
+  action()
+}
+
+fun raise-catch() : console () {
+  try-catch {
+    println(compute())
+  } {
+    println("Errored out")
+  }
+}
