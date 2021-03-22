@@ -13,6 +13,8 @@ Loops [may diverge](while.kk).
 
 Effects let you create your own control-flow structures like [exceptions](exceptions.kk).
 
-TODO: Resumable exceptions, resume twice, (maybe) fork/join
+Effects really are just [resumable exceptions](resumable.kk).
+
+You can do cool things if you [resume twice](twice.kk).
 
 > By separating effect signatures from their implementation, algebraic effects provide a high degree of modularity, allowing programmers to express effectful programs independently of the concrete interpretation of their effects. - [Handlers in Action (Sam Lindley, Ohad Kammar, Nicolar Oury)](https://homepages.inf.ed.ac.uk/slindley/papers/handlers.pdf) 
