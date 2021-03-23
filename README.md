@@ -1,7 +1,9 @@
 # NashFP - Effects
 
-Let's look at a guess-then-number example that uses random numbers, local mutable state, console IO and panic on exceptions.
-- [Direct Style (Ocaml)](guess.ml)
+We'll be using [Koka](https://koka-lang.github.io/) and [OCaml Multicore](https://github.com/ocaml-multicore/ocaml-multicore) so you might want to install them.
+
+Let's look at a guess-the-number program that uses random numbers, local mutable state, console IO and panic on exceptions.
+- [Direct Style (Mainline OCaml)](guess.ml)
 - [Monadic Style (Haskell)](guess.hs)
 - [Effects (Koka)](guess.kk)
 
@@ -13,7 +15,7 @@ Loops [may diverge](while.kk).
 
 Effects really are just [resumable exceptions](resumable.kk).
 
-Effects let you create your own control-flow structures like [exceptions](exceptions.kk).
+Effects let you create your own control-flow structures like [exceptions](exceptions.kk) or [your own scheduler](sched.ml).
 
 You can do cool things if you [resume twice](twice.kk).
 
